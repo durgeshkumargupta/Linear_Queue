@@ -1,2 +1,2 @@
-# Liner_Queue
-simple_queue/liner_queue
+# Linear_Queue
+simple_queue/linear_queue
