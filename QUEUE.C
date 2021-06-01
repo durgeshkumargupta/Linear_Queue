@@ -1,29 +1,31 @@
 #include<stdio.h>  //header file
 #include<conio.h>  //header file
 #define max 5
-int front=-1,rear=0,queue[max]; //global varible
+//front is use to fecth the data
+//rear is use to insert the data
+int rear=-1,front=0,queue[max]; //global varible
 void inqueue(int queue[],int data)
 {
-	if(front==(max-1))
+	if(rear==(max-1))
 	{
 	printf("Queue is full");
 	sleep(2);
 	}
 	else
 	{
-	  front++;
-	  queue[front]=data;
+	  rear++;
+	  queue[rear]=data;
 	}
 }
 void dequeue(int queue[])
 {
 	int num;
-	if(rear==(front+1))
+	if(front==(rear+1))
 	printf("Queue is empty");
 	else
 	{
-	  num=queue[rear];
-	  rear++;
+	  num=queue[front];
+	  front++;
 	  printf("Dequeue data=%d",num);
 	}
 	sleep(2);
@@ -31,11 +33,11 @@ void dequeue(int queue[])
 void display(int queue[])
 {
      int i;
-     if(rear==(front+1))
+     if(front==(rear+1))
      printf("Queue is empty");
      else
      {
-       for(i=rear;i<=front;i++)
+       for(i=front;i<=rear;i++)
 	 printf("%3d",queue[i]);
      }
 sleep(2);
